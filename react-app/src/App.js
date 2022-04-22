@@ -1,7 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
+import {useEffect, useState} from 'react'
+import axios from 'axios'
+
+
+
+
 
 function App() {
+
+
+
+  const [heroBg,setHeroBg] = useState(undefined)
+
+
+
+  useEffect(()=>{
+
+
+    axios.get('https://api.unsplash.com/photos/random')
+    .then((data)=>{
+      console.log(data)
+    })
+    .catch((e)=>{
+      console.log(e)
+    })
+
+  },[])
+
+
   return (
     <div className="App">
       <header className="App-header">
